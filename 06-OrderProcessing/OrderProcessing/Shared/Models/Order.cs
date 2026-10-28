@@ -8,7 +8,8 @@ public class Order
     public string? CouponCode { get; set; }
     public decimal SubTotal { get; set; }
     public decimal Discount { get; set; }
-    public decimal TotalAmount { get; set; }
+    public decimal ShippingCost { get; set; }
+    public decimal TotalAmount { get; set;}
     public OrderStatus Status { get; set; }
     public DateTime CreatedAt { get; set; }
     public string? FailureReason { get; set; }

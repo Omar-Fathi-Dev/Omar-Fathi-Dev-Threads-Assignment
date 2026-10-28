@@ -1,9 +1,12 @@
-﻿namespace OrderProcessing;
+﻿using OrderProcessing.Shared.Exceptions;
+using OrderProcessing.Shared.Storage;
+
+namespace OrderProcessing;
 
 class Program
 {
-    static void Main(string[] args)
+    private static async Task Main()
     {
-        Console.WriteLine("Hello, World!");
+        await DataSeeder.ResetAsync(CancellationToken.None);
     }
 }
