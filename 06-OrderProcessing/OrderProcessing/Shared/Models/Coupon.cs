@@ -6,3 +6,4 @@ public class Coupon
     public int DiscountPercent { get; set; }
     public DateTime ExpiryDate { get; set; }
 }
+

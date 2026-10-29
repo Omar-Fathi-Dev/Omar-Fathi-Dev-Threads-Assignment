@@ -11,3 +11,4 @@ public class Customer
     public LoyaltyTier LoyaltyTier { get; set; }
     
 }
+

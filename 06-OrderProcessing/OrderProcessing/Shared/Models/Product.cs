@@ -10,3 +10,4 @@ public class Product
     public decimal WeightKg { get; set; }
 
 }
+
