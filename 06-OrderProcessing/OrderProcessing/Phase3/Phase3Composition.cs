@@ -62,9 +62,10 @@ public static class Phase3Composition
                 store,
                 new Dictionary<int, int>
                 {
-                    { 1, 1 }
+                    { 3, 2 },
+                    { 17, int.MaxValue }
                 },
-                enableFailures: true);
+                enableFailures);
 
         // Async Order Processor
         OrderProcessor orderProcessor =

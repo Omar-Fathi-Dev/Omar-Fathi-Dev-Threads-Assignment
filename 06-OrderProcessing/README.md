@@ -111,3 +111,45 @@ Some event handlers require a `void` return type, such as `EventHandler`. Theref
 - With `await`, the method waited until the email operation completed.
 - When the awaited email operation failed, its exception propagated to the caller.
 - Without `await`, the application exited before the email operation reached the failure point in our test.
+
+## Phase 4 Questions
+
+### 1. Which tool did you use in Tasks 10.1–10.4, and why not start and await one by one?
+
+- **10.1:** `Task.WhenEach` to process orders as they finish.
+- **10.2:** `Task.WhenAll` to load data at the same time.
+- **10.3:** `Task.WhenAny` to get the first successful shipping quote.
+- **10.4 A:** `Parallel.ForEach` to use multiple CPU cores.
+- **10.4 B:** `Parallel.ForEachAsync` to send emails with a limit of 4.
+
+Starting and awaiting one by one makes each operation wait for the previous one. This is slower and does not meet the concurrency requirements.
+
+### 2. In 10.2, how do you get every exception? What does a plain await give you?
+
+Use `Task.WhenAll` and inspect each task's `Exception`. A plain `await` throws one exception.
+
+### 3. What happens to losing carriers in 10.3 if you never cancel them?
+
+They keep running and waste time and resources, even after a winner is found.
+
+### 4. Why does 10.4 A get faster with more CPU cores, while 10.4 B does not depend on the number of cores?
+
+A is CPU-bound, so more cores can do more work at the same time.
+
+B is I/O-bound. It spends most of its time waiting for emails to send, not using the CPU.
+
+### 5. What is the difference between parallel work (10.4 A) and concurrent asynchronous work (10.1)?
+
+Parallel work uses multiple CPU cores to calculate at the same time.
+
+Concurrent asynchronous work handles multiple operations while they wait for I/O.
+
+### 6. Show a cancelled run (`--cancel-after`) and explain what happened to the orders, stock and payments.
+
+The cancelled run stopped processing when the cancellation token was triggered.
+
+- **Orders:** Some orders were completed, while the remaining orders were not processed.
+- **Stock:** Stock changes from completed operations remained. Unprocessed orders did not reserve stock.
+- **Payments:** Payments already completed remained. Operations cancelled before payment did not create successful payments.
+
+Cancellation does not automatically undo completed operations.
