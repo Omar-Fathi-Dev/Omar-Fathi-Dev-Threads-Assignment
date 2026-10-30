@@ -59,7 +59,7 @@ class Program
                     break;
 
                 case "phase3":
-                    await Phase3Composition.RunAsync(ct);
+                    await Phase3Composition.RunAsync(ct, enableFailures: false);
                     break;
 
                 case "phase4":

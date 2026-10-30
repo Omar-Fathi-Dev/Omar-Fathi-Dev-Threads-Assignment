@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Globalization;
 using OrderProcessing.Shared.Models;
@@ -31,16 +32,27 @@ public class Phase1Runner(
             await _incomingOrderRepository.GetAllAsync(ct);
 
         // 2. Run synchronous validation.
-        Stopwatch syncStopwatch = new Stopwatch();
-        syncStopwatch.Start();
+        ConcurrentDictionary<int, byte> syncThreads =
+            new ConcurrentDictionary<int, byte>();
+
+        Stopwatch syncStopwatch = Stopwatch.StartNew();
 
         foreach (Order order in syncOrders)
         {
             ct.ThrowIfCancellationRequested();
+
+            syncThreads.TryAdd(
+                Environment.CurrentManagedThreadId, 0);
+
             _syncOrderValidator.ValidateOrder(order);
+
+            syncThreads.TryAdd(
+                Environment.CurrentManagedThreadId, 0);
         }
 
         syncStopwatch.Stop();
+
+        int syncThreadPoolCount = ThreadPool.ThreadCount;
 
         // 3. Reset again so the async run starts with fresh data.
         await DataSeeder.ResetAsync(ct);
@@ -49,16 +61,27 @@ public class Phase1Runner(
             await _incomingOrderRepository.GetAllAsync(ct);
 
         // 4. Run asynchronous validation sequentially.
-        Stopwatch asyncStopwatch = new Stopwatch();
-        asyncStopwatch.Start();
+        ConcurrentDictionary<int, byte> asyncThreads =
+            new ConcurrentDictionary<int, byte>();
+
+        Stopwatch asyncStopwatch = Stopwatch.StartNew();
 
         foreach (Order order in asyncOrders)
         {
             ct.ThrowIfCancellationRequested();
+
+            asyncThreads.TryAdd(
+                Environment.CurrentManagedThreadId, 0);
+
             await _orderValidator.ValidateOrderAsync(order, ct);
+
+            asyncThreads.TryAdd(
+                Environment.CurrentManagedThreadId, 0);
         }
 
         asyncStopwatch.Stop();
+
+        int asyncThreadPoolCount = ThreadPool.ThreadCount;
 
         // 5. Read the actual saved results from orders.json.
         List<Order> validatedOrders =
@@ -92,10 +115,21 @@ public class Phase1Runner(
             $"Sync Time:  {syncStopwatch.Elapsed.TotalSeconds.ToString("F1", CultureInfo.InvariantCulture)} seconds");
 
         Console.WriteLine(
+            $"Sync Distinct Threads: {syncThreads.Count}");
+
+        Console.WriteLine(
+            $"Sync ThreadPool.ThreadCount: {syncThreadPoolCount}");
+
+        Console.WriteLine(
             $"Async Time: {asyncStopwatch.Elapsed.TotalSeconds.ToString("F1", CultureInfo.InvariantCulture)} seconds");
+
+        Console.WriteLine(
+            $"Async Distinct Threads: {asyncThreads.Count}");
+
+        Console.WriteLine(
+            $"Async ThreadPool.ThreadCount: {asyncThreadPoolCount}");
 
         Console.WriteLine(
             $"orders.json now contains {savedOrders.Count} records.");
     }
 }
-

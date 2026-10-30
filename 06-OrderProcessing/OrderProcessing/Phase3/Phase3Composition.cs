@@ -99,20 +99,22 @@ public static class Phase3Composition
                 emailService,
                 productRepository);
 
-        // Prepare test data
+        // Phase 3: Main Order Processing Demo
+        Phase3Runner phase3Runner = new Phase3Runner(
+            incomingOrderRepository,
+            orderProcessor,
+            orderRepository);
+
+        await phase3Runner.RunAsync(ct);
+
+// Fire-and-Forget Demo
+        await DataSeeder.ResetAsync(ct);
+
         List<Order> incomingOrders =
             await incomingOrderRepository.GetAllAsync(ct);
 
-        Order? testOrder = null;
-
-        foreach (Order order in incomingOrders)
-        {
-            if (order.Id == 1)
-            {
-                testOrder = order;
-                break;
-            }
-        }
+        Order? testOrder = incomingOrders.FirstOrDefault(
+            order => order.Id == 1);
 
         if (testOrder == null)
         {
@@ -129,16 +131,15 @@ public static class Phase3Composition
             throw new InvalidOperationException("Customer not found.");
         }
 
-        // Fire-and-forget test
+        Console.WriteLine();
+        Console.WriteLine("========== FIRE-AND-FORGET DEMO ==========");
+
         await orderProcessor.ProcessOrderFireAndForgetAsync(
             testOrder,
             testCustomer,
             ct);
 
-        // Comparison Runner
-        // Temporarily disabled during the fire-and-forget investigation.
-
-        /*
+// Sync vs Async Comparison
         Phase3ComparisonRunner comparisonRunner =
             new Phase3ComparisonRunner(
                 syncOrderProcessor,
@@ -147,6 +148,5 @@ public static class Phase3Composition
                 incomingOrderRepository);
 
         await comparisonRunner.RunAsync(ct);
-        */
     }
 }

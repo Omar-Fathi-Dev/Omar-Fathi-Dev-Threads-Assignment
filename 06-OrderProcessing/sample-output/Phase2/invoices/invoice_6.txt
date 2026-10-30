@@ -1,0 +1,10 @@
+Invoice #6
+Customer ID: 6
+Created At: 10/30/2026 3:13:07 PM
+----------------------------------------
+Product ID: 5, Quantity: 1, Unit Price: $45.00
+----------------------------------------
+Subtotal: $45.00
+Discount: $9.00
+Shipping: $6.90
+Total: $42.90
