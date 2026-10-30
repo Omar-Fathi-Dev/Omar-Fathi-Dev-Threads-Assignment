@@ -24,4 +24,22 @@ public class CustomerRepository(JsonFileStore store)
 
         return customer;
     }
+    
+    public Customer? GetById(int id)
+    {
+        Log.Info("CustomerRepository", "Opening connection");
+        Thread.Sleep(200);
+
+        Log.Info("CustomerRepository", "Executing query");
+        int delayMilliseconds = Random.Shared.Next(300, 601);
+        Thread.Sleep(delayMilliseconds);
+
+        List<Customer> customers = Store.Read<Customer>(
+            DataFiles.GetPath(DataFiles.Customers));
+
+        Customer? customer = customers.Find(c => c.Id == id);
+
+        return customer;
+    }
+    
 }

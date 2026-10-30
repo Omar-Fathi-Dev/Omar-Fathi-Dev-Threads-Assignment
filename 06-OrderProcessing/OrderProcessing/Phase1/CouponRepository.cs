@@ -26,4 +26,20 @@ public class CouponRepository(JsonFileStore store)
         return coupons.Find(c =>
             c.Code.Equals(code, StringComparison.OrdinalIgnoreCase));
     }
+    
+    public Coupon? GetByCode(string code)
+    {
+        Log.Info("CouponRepository", "Opening connection");
+        Thread.Sleep(200);
+
+        Log.Info("CouponRepository", "Executing query");
+        int delayMilliseconds = Random.Shared.Next(300, 601);
+        Thread.Sleep(delayMilliseconds);
+
+        List<Coupon> coupons = Store.Read<Coupon>(
+            DataFiles.GetPath(DataFiles.Coupons));
+
+        return coupons.Find(c =>
+            c.Code.Equals(code, StringComparison.OrdinalIgnoreCase));
+    }
 }
