@@ -1,0 +1,432 @@
+[
+  {
+    "id": 1,
+    "customerId": 1,
+    "items": [
+      {
+        "productId": 1,
+        "quantity": 1,
+        "unitPrice": 0
+      },
+      {
+        "productId": 3,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": "SAVE10",
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.6513063+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 2,
+    "customerId": 2,
+    "items": [
+      {
+        "productId": 2,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": null,
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.6515256+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 3,
+    "customerId": 3,
+    "items": [
+      {
+        "productId": 5,
+        "quantity": 2,
+        "unitPrice": 0
+      },
+      {
+        "productId": 8,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": "WELCOME15",
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.6515295+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 4,
+    "customerId": 4,
+    "items": [
+      {
+        "productId": 6,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": null,
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.651531+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 5,
+    "customerId": 5,
+    "items": [
+      {
+        "productId": 7,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": null,
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.6515317+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 6,
+    "customerId": 6,
+    "items": [
+      {
+        "productId": 5,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": "FLASH20",
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.6515338+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 7,
+    "customerId": 7,
+    "items": [
+      {
+        "productId": 6,
+        "quantity": 1,
+        "unitPrice": 0
+      },
+      {
+        "productId": 8,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": null,
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.6515347+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 8,
+    "customerId": 8,
+    "items": [
+      {
+        "productId": 1,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": "SAVE10",
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.6515356+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 9,
+    "customerId": 9,
+    "items": [
+      {
+        "productId": 3,
+        "quantity": 5,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": null,
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.651537+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 10,
+    "customerId": 10,
+    "items": [
+      {
+        "productId": 4,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": null,
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.6515392+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 11,
+    "customerId": 1,
+    "items": [
+      {
+        "productId": 4,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": null,
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.65154+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 12,
+    "customerId": 2,
+    "items": [
+      {
+        "productId": 2,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": "OLD20",
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.6515407+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 13,
+    "customerId": 3,
+    "items": [
+      {
+        "productId": 6,
+        "quantity": 2,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": null,
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.6515419+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 14,
+    "customerId": 5,
+    "items": [
+      {
+        "productId": 8,
+        "quantity": 2,
+        "unitPrice": 0
+      },
+      {
+        "productId": 5,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": "WELCOME15",
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.6515433+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 15,
+    "customerId": 99,
+    "items": [
+      {
+        "productId": 2,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": null,
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.6515442+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 16,
+    "customerId": 6,
+    "items": [
+      {
+        "productId": 7,
+        "quantity": 1,
+        "unitPrice": 0
+      },
+      {
+        "productId": 5,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": null,
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.6515451+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 17,
+    "customerId": 7,
+    "items": [
+      {
+        "productId": 2,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": "SAVE10",
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.6515458+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 18,
+    "customerId": 8,
+    "items": [
+      {
+        "productId": 6,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": "FAKE50",
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.6515468+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 19,
+    "customerId": 9,
+    "items": [
+      {
+        "productId": 8,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": null,
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.6515475+02:00",
+    "failureReason": null,
+    "transactionId": null
+  },
+  {
+    "id": 20,
+    "customerId": 10,
+    "items": [
+      {
+        "productId": 1,
+        "quantity": 1,
+        "unitPrice": 0
+      },
+      {
+        "productId": 6,
+        "quantity": 1,
+        "unitPrice": 0
+      }
+    ],
+    "couponCode": "FLASH20",
+    "subTotal": 0,
+    "discount": 0,
+    "shippingCost": 0,
+    "totalAmount": 0,
+    "status": "Pending",
+    "createdAt": "2026-10-30T15:37:22.6515483+02:00",
+    "failureReason": null,
+    "transactionId": null
+  }
+]
